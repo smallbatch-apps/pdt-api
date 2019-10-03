@@ -10,12 +10,12 @@ const app = express();
 
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
+mongoose.set('useUnifiedTopology', true);
 
 mongoose.connect(process.env.MONGO_CONNECTION_STRING, { useNewUrlParser: true });
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(cors());
-//app.use('/graphql', expressGraphQL({ schema, graphiql: true }));
 
 routes(app);
 

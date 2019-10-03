@@ -17,6 +17,12 @@ const UserSchema = new Schema({
   },
   phone: String,
   address: String,
+  company: {
+    type: String,
+    trim: true,
+    required: true,
+    select: false
+  },
   password: {
     type: String,
     trim: true,
@@ -26,7 +32,7 @@ const UserSchema = new Schema({
   type: {
     type: String,
     trim: true,
-    default: "standard"
+    default: "developer"
   },
 });
 

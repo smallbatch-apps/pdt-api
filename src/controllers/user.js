@@ -13,9 +13,9 @@ module.exports = {
   },
 
   async store(req, res){
-    const {name, email, phone, address, password} = req.body.user;
+    const {name, email, phone, address, password, company, type} = req.body.data.attributes;
 
-    const user = new User({ name, email, phone, address, password });
+    const user = new User({ name, email, phone, address, password, company, type });
 
     const error = user.validateSync();
 
