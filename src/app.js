@@ -15,6 +15,8 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.MONGO_CONNECTION_STRING, { useNewUrlParser: true });
 
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+app.use(bodyParser.json())
+
 app.use(cors());
 
 routes(app);

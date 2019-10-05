@@ -19,5 +19,5 @@ module.exports = app => {
 
   // // The following routes are not authenticated
   app.post('/api/users', UserController.store);
-  app.post('/api/login', AuthController.authenticate);
+  app.post('/api/token-auth', AuthController.authenticate);
 }

@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 module.exports = {
   async authenticate(req, res){
-    const {email, password} = req.body.data.attributes;
+    const {email, password} = req.body;
 
     let token = null;
     let ok = false;
