@@ -34,6 +34,7 @@ const BlockchainSchema = new Schema({
 }, { toJSON: { virtuals: true } });
 
 BlockchainSchema.virtual('status').get(function(){
+  
   if(!this.lodged) {
     return 'Triage';
   }
